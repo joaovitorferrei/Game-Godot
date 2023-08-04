@@ -1,0 +1,123 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "ParallaxBackground",
+"class": "background",
+"language": "GDScript",
+"path": "res://background.gd"
+}, {
+"base": "Area2D",
+"class": "detection_area",
+"language": "GDScript",
+"path": "res://detection_area.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "enemy_template",
+"language": "GDScript",
+"path": "res://enemy_template.gd"
+}, {
+"base": "Sprite",
+"class": "enemy_texture",
+"language": "GDScript",
+"path": "res://enemy_texture.gd"
+}, {
+"base": "Node2D",
+"class": "level",
+"language": "GDScript",
+"path": "res://level.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "player",
+"language": "GDScript",
+"path": "res://player.gd"
+}, {
+"base": "Sprite",
+"class": "player_texture",
+"language": "GDScript",
+"path": "res://texture.gd"
+}, {
+"base": "Node2D",
+"class": "stats",
+"language": "GDScript",
+"path": "res://stats.gd"
+}, {
+"base": "enemy_texture",
+"class": "texture_whale",
+"language": "GDScript",
+"path": "res://whale.gd"
+} ]
+_global_script_class_icons={
+"background": "",
+"detection_area": "",
+"enemy_template": "",
+"enemy_texture": "",
+"level": "",
+"player": "",
+"player_texture": "",
+"stats": "",
+"texture_whale": ""
+}
+
+[application]
+
+config/name="tarde"
+run/main_scene="res://level.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=320
+window/size/height=180
+window/size/test_width=1280
+window/size/test_height=720
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[global]
+
+layer=false
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[input]
+
+attack={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+shield={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+crouch={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="tile"
+2d_physics/layer_2="slide_tile"
+2d_physics/layer_3="player"
+2d_physics/layer_4="enemy"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

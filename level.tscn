@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://floor_autotile.tres" type="TileSet" id=1]
+[ext_resource path="res://small_decoration_tile.tres" type="TileSet" id=2]
+[ext_resource path="res://normal_decoration_tile.tres" type="TileSet" id=3]
+[ext_resource path="res://background.tscn" type="PackedScene" id=4]
+[ext_resource path="res://mask.tscn" type="PackedScene" id=5]
+[ext_resource path="res://player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://level.gd" type="Script" id=7]
+
+[node name="level" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="level_design" type="Node2D" parent="."]
+
+[node name="floor" type="TileMap" parent="level_design"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 262144, 0, 0, 262145, 0, 1, 262146, 0, 1, 262147, 0, 1, 262148, 0, 1, 262149, 0, 2, 262152, 0, 0, 262153, 0, 1, 262154, 0, 1, 262155, 0, 2, 327680, 0, 131072, 327681, 0, 131073, 327682, 0, 131073, 327683, 0, 131073, 327684, 0, 131073, 327685, 0, 131074, 327688, 0, 131072, 327689, 0, 131073, 327690, 0, 131073, 327691, 0, 131074, 589828, 0, 0, 589829, 0, 1, 589830, 0, 1, 589831, 0, 1, 589832, 0, 1, 589833, 0, 1, 589834, 0, 1, 589835, 0, 2, 655364, 0, 131072, 655365, 0, 131073, 655366, 0, 131073, 655367, 0, 131073, 655368, 0, 131073, 655369, 0, 131073, 655370, 0, 131073, 655371, 0, 131074 )
+
+[node name="normal_decoration" type="TileMap" parent="level_design"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 131072, 2, 0, 131083, 2, 0, 196608, 4, 0, 196609, 0, 0, 196613, 3, 0, 196617, 0, 0, 458756, 2, 0, 458763, 2, 0, 524292, 0, 0, 524296, 3, 0, 524297, 0, 0, 524298, 5, 0 )
+
+[node name="small_decoration" type="TileMap" parent="level_design"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 458754, 0, 0, 458756, 0, 0, 458757, 1, 0, 458759, 0, 0, 458762, 0, 0, 458769, 0, 0, 458770, 1, 0, 458773, 0, 0, 458774, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114125, 1, 0, 1114127, 0, 0, 1114128, 1, 0, 1114132, 0, 0, 1114134, 0, 0 )
+
+[node name="background" parent="." instance=ExtResource( 4 )]
+
+[node name="mask" parent="." instance=ExtResource( 5 )]
+color = Color( 0.0823529, 0.0745098, 0.0745098, 1 )
+
+[node name="player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 76, 35 )
